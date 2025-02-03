@@ -12,7 +12,7 @@ async def main():
   user = Client("scrapper",
                 api_id="26453853",
                 api_hash="3708cc801cd1259c21f83c35b7141b31)
-  bot = Client("my_bot",
+  bot = Client("retrochk_bot",
                api_id="26453853",
                api_hash="3708cc801cd1259c21f83c35b7141b31",
                bot_token="7851924299:AAEj70SJUOzeS5w-GHUpUiK-GiPV1CHRaSE",
