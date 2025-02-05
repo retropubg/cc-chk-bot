@@ -11,7 +11,7 @@ plugins = dict(root="plugins")
 async def main():
   user = Client("scrapper",
                 api_id="26453853",
-                api_hash="3708cc801cd1259c21f83c35b7141b31)
+                api_hash="3708cc801cd1259c21f83c35b7141b31")
   bot = Client("retrochk_bot",
                api_id="26453853",
                api_hash="3708cc801cd1259c21f83c35b7141b31",
