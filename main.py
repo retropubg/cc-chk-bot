@@ -10,12 +10,12 @@ plugins = dict(root="plugins")
 
 async def main():
   user = Client("scrapper",
-                api_id="26453853",
-                api_hash="3708cc801cd1259c21f83c35b7141b31")
-  bot = Client("retrochk_bot",
-               api_id="26453853",
-               api_hash="3708cc801cd1259c21f83c35b7141b31",
-               bot_token="7851924299:AAEj70SJUOzeS5w-GHUpUiK-GiPV1CHRaSE",
+                api_id="26043952",
+                api_hash="96b8dea447ef580b5b75b01ccc3ab710")
+  bot = Client("@retroochk_bot",
+               api_id="26043952",
+               api_hash="96b8dea447ef580b5b75b01ccc3ab710",
+               bot_token="7020048572:AAFoI3S5wyzXZvL2JArjsLUXvDqrPkmfUVc",
                plugins=plugins)
   clients = [user, bot]
   bot.set_parse_mode(enums.ParseMode.HTML)
