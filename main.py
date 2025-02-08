@@ -1,27 +1,37 @@
 import asyncio
-from pyrogram import Client, compose, filters, enums
-import re
-from pathlib import Path
-from defs import getcards
-from plugins.func.users_sql import *
+import os
+from pyrogram import Client, enums
+from dotenv import load_dotenv
+
+# Cargar variables de entorno
+load_dotenv()
+
+API_ID = os.getenv("API_ID")
+API_HASH = os.getenv("API_HASH")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+if not API_ID or not API_HASH or not BOT_TOKEN:
+    raise ValueError("Faltan credenciales en las variables de entorno")
 
 plugins = dict(root="plugins")
 
-
 async def main():
-  user = Client("scrapper",
-                api_id="24578407",
-                api_hash="5f711fbe013fd0d20147f62728118510")
-  bot = Client("my_bot",
-               api_id="24578407",
-               api_hash="5f711fbe013fd0d20147f62728118510",
-               bot_token="6127557847:AAEGXigaZIS4MHoxOudREzxZnNQKtu4TjD8",
-               plugins=plugins)
-  clients = [user, bot]
-  bot.set_parse_mode(enums.ParseMode.HTML)
+    """Función principal para ejecutar el bot."""
+    try:
+        bot = Client("retroochk_bot",
+                     api_id=API_ID,
+                     api_hash=API_HASH,
+                     bot_token=BOT_TOKEN,
+                     plugins=plugins)
 
-  print("Done Bot Active ✅")
+        bot.set_parse_mode(enums.ParseMode.HTML)
+        print("✅ Bot Activo")
 
-  await compose(clients)
+        await bot.start()
+        await asyncio.Event().wait()  # Mantener el bot en ejecución
 
+    except Exception as e:
+        print(f"❌ Error al iniciar el bot: {e}")
 
+if __name__ == "__main__":
+    asyncio.run(main())
