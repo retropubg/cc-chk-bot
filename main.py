@@ -1,27 +1,32 @@
 import asyncio
-from pyrogram import Client, compose, filters, enums
-import re
-from pathlib import Path
-from defs import getcards
-from plugins.func.users_sql import *
+import os
+from pyrogram import Client, compose, enums
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde .env
+load_dotenv()
+
+# Obtener credenciales de forma segura
+API_ID = os.getenv("API_ID")
+API_HASH = os.getenv("API_HASH")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 plugins = dict(root="plugins")
 
-
 async def main():
-  user = Client("scrapper",
-                api_id="26043952",
-                api_hash="96b8dea447ef580b5b75b01ccc3ab710")
-  bot = Client("retroochk_bot",
-               api_id="26043952",
-               api_hash="96b8dea447ef580b5b75b01ccc3ab710",
-               bot_token="7020048572:AAGahJcSN2Sk5z_ehhMnKJ783gp6EFSY0kI",
-               plugins=plugins)
-  clients = [user, bot]
-  bot.set_parse_mode(enums.ParseMode.HTML)
+    user = Client("scrapper", api_id=API_ID, api_hash=API_HASH)
+    bot = Client("retroochk_bot",
+                 api_id=API_ID,
+                 api_hash=API_HASH,
+                 bot_token=BOT_TOKEN,
+                 plugins=plugins)
+    
+    bot.set_parse_mode(enums.ParseMode.HTML)
+    
+    print("✅ Bot Activo")
+    
+    # Ejecutar múltiples clientes
+    await compose([user, bot])
 
-  print("Done Bot Active ✅")
-
-  await compose(clients)
-
-
+if __name__ == "__main__":
+    asyncio.run(main())
