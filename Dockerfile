@@ -10,12 +10,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libffi-dev \
     && rm -rf /var/lib/apt/lists/*
 
+# Copiar el archivo requirements.txt
 COPY requirements.txt .
 
-RUN pip3 install --upgrade pip && \
-    pip3 install python-dotenv && \
-    pip3 install -U -r requirements.txt# Actualizar pip e instalar dependencias de Python
+# Actualizar pip e instalar las dependencias de Python
+RUN pip install --upgrade pip && \
+    pip install -U -r requirements.txt
 
+# Copiar el resto del código
 COPY . .
 
+# Comando para ejecutar la aplicación
 CMD ["python3", "main.py"]
