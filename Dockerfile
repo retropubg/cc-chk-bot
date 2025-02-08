@@ -1,15 +1,20 @@
-FROM debian:latest
+FROM python:3.8-slim
 
-RUN apt update && apt upgrade -y
+WORKDIR /app
 
-RUN apt install git curl python3-pip -y
+# Instalar dependencias del sistema necesarias
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /app/
+COPY requirements.txt .
 
-WORKDIR /app/
+# Actualizar pip e instalar dependencias de Python
+RUN pip3 install --upgrade pip && pip3 install -U -r requirements.txt
 
-COPY . /app/
+COPY . .
 
-RUN pip3 install -U -r requirements.txt
-
-CMD python3 main.py
+CMD ["python3", "main.py"]
