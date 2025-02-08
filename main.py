@@ -3,7 +3,7 @@ from pyrogram import Client, compose, filters, enums
 import re
 from pathlib import Path
 from defs import getcards
-from plugins.func.users_sql import *
+from plugins.func.users_sql import*
 
 plugins = dict(root="plugins")
 
