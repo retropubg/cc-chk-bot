@@ -15,7 +15,7 @@ plugins = dict(root="plugins")
 
 async def main():
     user = Client("scrapper", api_id=API_ID, api_hash=API_HASH)
-    bot = Client("retroochk_bot",
+    bot = Client("my_bot",
                  api_id=API_ID,
                  api_hash=API_HASH,
                  bot_token=BOT_TOKEN,
