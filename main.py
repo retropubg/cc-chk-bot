@@ -21,7 +21,6 @@ plugins = dict(root="plugins")
 async def main():
     """Función principal para ejecutar los clientes de Pyrogram."""
     try:
-        user = Client("scrapper", api_id=API_ID, api_hash=API_HASH)
         bot = Client("my_bot",
                      api_id=API_ID,
                      api_hash=API_HASH,
