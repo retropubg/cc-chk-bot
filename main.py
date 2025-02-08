@@ -349,5 +349,7 @@ async def main():
   print("Done Bot Active ✅")
 
   await compose(clients)
+ 
+  asyncio.run(main())
 
 
