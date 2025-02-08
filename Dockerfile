@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 
 # Actualizar pip e instalar dependencias de Python
-RUN pip3 install python-dotenv pip3 install --upgrade pip && pip3 install -U -r requirements.txt
+RUN pip install python-dotenv pip3 install --upgrade pip && pip3 install -U -r requirements.txt
 
 COPY . .
 
