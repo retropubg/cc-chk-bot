@@ -12,10 +12,10 @@ async def main():
   user = Client("scrapper",
                 api_id="26043952",
                 api_hash="96b8dea447ef580b5b75b01ccc3ab710")
-  bot = Client("@retroochk_bot",
+  bot = Client("retroochk_bot",
                api_id="26043952",
                api_hash="96b8dea447ef580b5b75b01ccc3ab710",
-               bot_token="7020048572:AAFoI3S5wyzXZvL2JArjsLUXvDqrPkmfUVc",
+               bot_token="7020048572:AAGahJcSN2Sk5z_ehhMnKJ783gp6EFSY0kI",
                plugins=plugins)
   clients = [user, bot]
   bot.set_parse_mode(enums.ParseMode.HTML)
