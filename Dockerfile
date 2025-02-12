@@ -21,4 +21,4 @@ RUN pip install --upgrade pip && \
 COPY . .
 
 # Comando para ejecutar la aplicación
-CMD ["python3", "main.py"]
+CMD ["python3", "run.py"]
