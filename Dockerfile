@@ -1,6 +1,6 @@
 FROM python:3.8-slim
 
-WORKDIR /app
+WORKDIR /cc-chk-bot
 
 # Instalar dependencias del sistema necesarias
 RUN apt-get update && apt-get install -y --no-install-recommends \
