@@ -9,14 +9,16 @@ plugins = dict(root="plugins")
 
 
 async def main():
-  user = Client("scrapper",
-                api_id="",
-                api_hash="")
-  bot = Client("my_bot",
-               api_id="26043952",
-               api_hash="96b8dea447ef580b5b75b01ccc3ab710",
-               bot_token="7020048572:AAG5bV9yhIk4DVw3ynUo-j9GHS743f9xVyA",
-               plugins=plugins)
+    user = Client("scrapper",
+                  api_id=26043952,  # Reemplaza con tu API ID
+                  api_hash="96b8dea447ef580b5b75b01ccc3ab710")
+
+    bot = Client("my_bot",
+                 api_id=26043952,
+                 api_hash="96b8dea447ef580b5b75b01ccc3ab710",
+                 bot_token="7633669044:AAHiS9PWSZkyZeHdTA6m8-6PYNf9DKitfvQ",
+                 plugins=plugins)
+
   clients = [user, bot]
   bot.set_parse_mode(enums.ParseMode.HTML)
 
